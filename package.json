@@ -1,0 +1,27 @@
+{
+  "name": "lead-sender",
+  "version": "1.0.0",
+  "description": "Express API service for sending Telegram messages with GramJS.",
+  "type": "module",
+  "main": "src/bin/www.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/bin/www.js",
+    "start:dev": "tsx src/bin/www.ts",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsx watch src/bin/www.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "telegram": "^2.26.22",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.3",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
