@@ -6,6 +6,11 @@
   "main": "src/bin/www.js",
   "scripts": {
     "build": "tsc",
+    "check": "tsc --noEmit && oxlint src --tsconfig tsconfig.json --import-plugin --node-plugin && prettier . --check",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "oxlint src --tsconfig tsconfig.json --import-plugin --node-plugin",
+    "lint:fix": "oxlint src --tsconfig tsconfig.json --import-plugin --node-plugin --fix",
     "start": "node dist/bin/www.js",
     "start:dev": "tsx src/bin/www.ts",
     "typecheck": "tsc --noEmit",
@@ -19,8 +24,11 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/express": "^5.0.6",
     "@types/node": "^22.20.3",
+    "oxlint": "^1.83.0",
+    "prettier": "^3.9.8",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   }
