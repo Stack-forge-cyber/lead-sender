@@ -6,15 +6,17 @@
   "main": "src/bin/www.js",
   "scripts": {
     "build": "tsc",
-    "check": "tsc --noEmit && oxlint src --tsconfig tsconfig.json --import-plugin --node-plugin && prettier . --check",
+    "check": "tsc --noEmit && oxlint src tests vitest.config.ts --tsconfig tsconfig.json --import-plugin --node-plugin --vitest-plugin && prettier . --check",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "lint": "oxlint src --tsconfig tsconfig.json --import-plugin --node-plugin",
-    "lint:fix": "oxlint src --tsconfig tsconfig.json --import-plugin --node-plugin --fix",
+    "lint": "oxlint src tests vitest.config.ts --tsconfig tsconfig.json --import-plugin --node-plugin --vitest-plugin",
+    "lint:fix": "oxlint src tests vitest.config.ts --tsconfig tsconfig.json --import-plugin --node-plugin --vitest-plugin --fix",
     "start": "node dist/bin/www.js",
     "start:dev": "tsx src/bin/www.ts",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "watch": "tsx watch src/bin/www.ts"
+    "watch": "tsx watch src/bin/www.ts",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
@@ -30,6 +32,7 @@
     "oxlint": "^1.83.0",
     "prettier": "^3.9.8",
     "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
   }
 }
